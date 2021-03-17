@@ -1,4 +1,6 @@
+import { Route } from '@angular/compiler/src/core';
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-pate',
@@ -34,9 +36,12 @@ export class PateComponent implements OnInit {
     }
   ]
 
-  constructor() { }
+  constructor(private router: Router) { }
 
   ngOnInit(): void {
   }
 
+  retour(){
+    this.router.navigateByUrl('/menu');
+  }
 }

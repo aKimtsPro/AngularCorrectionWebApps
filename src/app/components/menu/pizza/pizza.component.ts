@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { Pizza } from 'src/app/model/pizza.model'
 
 @Component({
@@ -31,11 +32,16 @@ export class PizzaComponent implements OnInit {
     }
   ] 
 
-  constructor() { }
+  constructor(private router: Router) { }
 
   ngOnInit(): void {
     console.log(this.menuPizza[0].constructor.name);
 
+  }
+
+  
+  retour(){
+    this.router.navigateByUrl('/menu');
   }
 
 }

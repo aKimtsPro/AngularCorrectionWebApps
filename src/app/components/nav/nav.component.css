@@ -1,0 +1,26 @@
+nav {
+    background-color: rgb(200, 231, 231);
+    display: flex;
+    padding: 10px 30px;
+}
+
+div {
+    margin: 0 20px;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+}
+
+a:hover {
+    color: rgb(155, 180, 192);
+}
+
+.active {
+    font-weight: bolder;
+}
+
+.test{
+    background-color: tomato;
+}

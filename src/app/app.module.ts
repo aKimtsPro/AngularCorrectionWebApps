@@ -12,6 +12,9 @@ import { PateComponent } from './components/menu/pate/pate.component';
 import { PizzaComponent } from './components/menu/pizza/pizza.component';
 import { FormsModule } from '@angular/forms';
 import { ContactFormComponent } from './components/contact/contact-form/contact-form.component';
+import { NavComponent } from './components/nav/nav.component';
+import { Page404Component } from './components/page404/page404.component';
+import { PlatPipe } from './pipes/plat.pipe';
 
 @NgModule({
   declarations: [
@@ -23,7 +26,10 @@ import { ContactFormComponent } from './components/contact/contact-form/contact-
     MenuComponent,
     PateComponent,
     PizzaComponent,
-    ContactFormComponent
+    ContactFormComponent,
+    NavComponent,
+    Page404Component,
+    PlatPipe
   ],
   imports: [
     BrowserModule,

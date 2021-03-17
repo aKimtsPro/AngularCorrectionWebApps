@@ -3,7 +3,7 @@
 <div class="container">
 
     <div>
-        <label for="nom">Quel est votre nom?</label><br>
+        <label for="nom">{{ 'Quel est votre nom?' | lowercase }}</label><br>
         <input type="text" id="nom" [(ngModel)]="nom">
         <p>Bienvenue sur notre merveilleux site {{ nom }} </p>
     </div>
