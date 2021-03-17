@@ -1,0 +1,37 @@
+<div id="form-container">
+
+    <h3>Formulaire</h3>
+
+    <div>
+<!-- [ngStyle]="{border: message.nom === '' ? '2px solid red' : 'none'}" -->
+        <label for="input-nom-form"> Votre nom :  </label><br>
+        <input type="text" id="input-nom-form" [ngClass]="{bordered: message.nom === '' }" [(ngModel)]="message.nom"><br>
+
+        <label for="input-dest-form">A destination de :</label><br>
+        <select id="input-dest-form" [(ngModel)]="message.dest">
+            <option value="proprio"> proprio </option>
+            <option value="cuistot"> cuistot </option>
+            <option value="livreur"> livreur </option>
+        </select><br>
+
+        <label for="message-form"> Votre message : </label><br>
+        <textarea id="message-form" cols="25" rows="5" [(ngModel)]="message.message"></textarea><br>
+
+        <button class="btn btn-success" (click)="onClick()">envoyer</button>
+        <button class="btn" [ngClass]="{'btn-danger': affich, 'btn-info': !affich}" (click)="toggleShow()">afficher/cacher</button>
+    </div>
+
+    <div *ngIf="affich">
+        <h4>Message précendents</h4>
+        <div>
+            <div class="card" *ngFor="let msg of msgList">
+                <div class="card-body">
+                    <h5 class="card-title"> {{ msg.dest }} </h5>
+                    <h6 class="card-subtitle mb-2 text-muted"> {{ msg.nom }} </h6>
+                    <p class="card-text"> {{ msg.message }} </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>

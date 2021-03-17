@@ -11,6 +11,7 @@ import { MenuComponent } from './components/menu/menu.component';
 import { PateComponent } from './components/menu/pate/pate.component';
 import { PizzaComponent } from './components/menu/pizza/pizza.component';
 import { FormsModule } from '@angular/forms';
+import { ContactFormComponent } from './components/contact/contact-form/contact-form.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { FormsModule } from '@angular/forms';
     ContactComponent,
     MenuComponent,
     PateComponent,
-    PizzaComponent
+    PizzaComponent,
+    ContactFormComponent
   ],
   imports: [
     BrowserModule,

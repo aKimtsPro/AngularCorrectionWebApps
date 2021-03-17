@@ -8,12 +8,30 @@ import { Component, OnInit } from '@angular/core';
 export class PateComponent implements OnInit {
 
   menuPate = [
-    'pâte au pesto',
-    'pâte carbo',
-    'pâte al arabiata',
-    'pâte bolo',
-    'pâte au beurre',
-    'pâte au ketchup'
+    {
+      nom: 'pâte au pesto',
+      prix: 8
+    },
+    {
+      nom: 'pâte carbo',
+      prix: 12
+    },
+    {
+      nom: 'pâte al arabiata',
+      prix: 10
+    },
+    {
+      nom: 'pâte bolo',
+      prix: 5
+    },
+    {
+      nom: 'pâte au beurre',
+      prix: 2
+    },
+    {
+      nom: 'pâte au ketchup',
+      prix: 24
+    }
   ]
 
   constructor() { }

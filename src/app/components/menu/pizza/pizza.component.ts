@@ -34,6 +34,8 @@ export class PizzaComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
+    console.log(this.menuPizza[0].constructor.name);
+
   }
 
 }

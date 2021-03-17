@@ -1,0 +1,9 @@
+#form-container{
+    background-color: rgb(121, 167, 167);
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+.bordered{
+    border: 2px solid red;
+}
