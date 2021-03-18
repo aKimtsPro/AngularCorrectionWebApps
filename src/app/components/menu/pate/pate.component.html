@@ -1,7 +1,7 @@
 <h4>Menu de pâte</h4>
 
 <ul>
-    <li *ngFor="let pate of menuPate"> {{ pate.nom }} - {{ pate.prix }}$ </li>
+    <li *ngFor="let pate of menuPate"> {{ pate | formatPlat }}</li>
 </ul>
+<p> Prix moyen des pate: {{ menuPate | moyennePrix | currency:'USD'}} </p>
 
-<button class="btn" (click)="retour()">retour</button>

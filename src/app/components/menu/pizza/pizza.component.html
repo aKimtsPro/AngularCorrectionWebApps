@@ -1,7 +1,6 @@
 <h4>Menu de pizza</h4>
 
 <ul>
-    <li *ngFor="let pizza of menuPizza"> {{ pizza.nom }} - {{ pizza.prix }} </li>
+    <li *ngFor="let pizza of menuPizza"> {{ pizza | formatPlat:fac }} </li>
 </ul>
-
-<button class="btn" (click)="retour()">retour</button>
+<p> Prix moyen des pizzas: {{ menuPizza | moyennePrix  | currency:'USD' }} </p>

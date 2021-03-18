@@ -14,7 +14,8 @@ import { FormsModule } from '@angular/forms';
 import { ContactFormComponent } from './components/contact/contact-form/contact-form.component';
 import { NavComponent } from './components/nav/nav.component';
 import { Page404Component } from './components/page404/page404.component';
-import { PlatPipe } from './pipes/plat.pipe';
+import { FormatPlatPipe } from './pipes/format-plat.pipe';
+import { MoyennePrixPipe } from './pipes/moyenne-prix.pipe';
 
 @NgModule({
   declarations: [
@@ -29,7 +30,8 @@ import { PlatPipe } from './pipes/plat.pipe';
     ContactFormComponent,
     NavComponent,
     Page404Component,
-    PlatPipe
+    FormatPlatPipe,
+    MoyennePrixPipe
   ],
   imports: [
     BrowserModule,
