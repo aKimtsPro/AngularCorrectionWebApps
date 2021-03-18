@@ -1,6 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { Router } from '@angular/router';
 import { Pizza } from 'src/app/model/pizza.model'
+import { Plat } from 'src/app/model/plat.model';
 
 @Component({
   selector: 'app-pizza',
@@ -32,6 +33,9 @@ export class PizzaComponent implements OnInit {
     }
   ] 
 
+  @Output('ajout-pizza')
+  pizzaEmitter = new EventEmitter<Plat>();
+
   constructor(private router: Router) { }
 
   ngOnInit(): void {
@@ -42,6 +46,10 @@ export class PizzaComponent implements OnInit {
   
   retour(){
     this.router.navigateByUrl('/menu');
+  }
+
+  onClick(pizza: Pizza){
+    this.pizzaEmitter.emit( pizza );
   }
 
 }

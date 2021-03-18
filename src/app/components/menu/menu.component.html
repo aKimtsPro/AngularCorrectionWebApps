@@ -1,12 +1,15 @@
 <h2>Menus</h2>
 
+
+
 <div class="container">
     <div class="row">
-        <div class="col">
-            <app-pate></app-pate>
+        <div class="col-md-6">
+            <app-pate (ajout-pate)="onAjout($event)"></app-pate>
         </div>
-        <div class="col">
-            <app-pizza></app-pizza>
+        <div class="col-md-6">
+            <app-pizza (ajout-pizza)="onAjout($event)"></app-pizza>
         </div>
     </div>
+    <app-commande [commandes]="cmdList"></app-commande>
 </div>

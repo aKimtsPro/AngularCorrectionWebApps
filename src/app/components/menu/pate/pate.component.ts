@@ -1,6 +1,7 @@
 import { Route } from '@angular/compiler/src/core';
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { Router } from '@angular/router';
+import { Plat } from 'src/app/model/plat.model';
 
 @Component({
   selector: 'app-pate',
@@ -36,6 +37,9 @@ export class PateComponent implements OnInit {
     }
   ]
 
+  @Output('ajout-pate')
+  pateEmitter = new EventEmitter<Plat>();
+
   constructor(private router: Router) { }
 
   ngOnInit(): void {
@@ -43,5 +47,9 @@ export class PateComponent implements OnInit {
 
   retour(){
     this.router.navigateByUrl('/menu');
+  }
+
+  onClick(pate: Plat){
+    this.pateEmitter.emit( pate );
   }
 }

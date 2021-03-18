@@ -1,0 +1,11 @@
+.cmd-tab-item{
+    background-color: rgb(165, 188, 189);
+    border-left: 2px solid black;
+    border-right: 2px solid black;
+    border-bottom: 2px solid black;
+    color: black;
+}
+
+p{
+    margin: 8px;
+}

@@ -2,24 +2,24 @@
 
     <h3>Formulaire</h3>
 
-    <div>
+    <form [formGroup]="form" (ngSubmit)="onSubmit()">
 <!-- [ngStyle]="{border: message.nom === '' ? '2px solid red' : 'none'}" -->
         <label for="input-nom-form"> Votre nom :  </label><br>
-        <input type="text" id="input-nom-form" [ngClass]="{bordered: message.nom === '' }" [(ngModel)]="message.nom"><br>
+        <input type="text" id="input-nom-form" formControlName="nom"><br>
 
         <label for="input-dest-form">A destination de :</label><br>
-        <select id="input-dest-form" [(ngModel)]="message.dest">
+        <select id="input-dest-form"  formControlName="dest">
             <option value="proprio"> proprio </option>
             <option value="cuistot"> cuistot </option>
             <option value="livreur"> livreur </option>
         </select><br>
 
         <label for="message-form"> Votre message : </label><br>
-        <textarea id="message-form" cols="25" rows="5" [(ngModel)]="message.message"></textarea><br>
+        <textarea id="message-form" cols="25" rows="5" formControlName="message"></textarea><br>
 
-        <button class="btn btn-success" (click)="onClick()">envoyer</button>
+        <button type="submit" class="btn btn-success">envoyer</button>
         <button class="btn" [ngClass]="{'btn-danger': affich, 'btn-info': !affich}" (click)="toggleShow()">afficher/cacher</button>
-    </div>
+    </form>
 
     <div *ngIf="affich">
         <h4>Message précendents</h4>

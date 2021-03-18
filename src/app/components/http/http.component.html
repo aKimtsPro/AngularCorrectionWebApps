@@ -1,0 +1,12 @@
+<h4>Demo Http</h4>
+
+<input placeholder="userId" type="number" [(ngModel)]="post.userId"><br>
+<input placeholder="title" type="text" [(ngModel)]="post.title"><br>
+<input placeholder="body" type="text" [(ngModel)]="post.body"><br>
+
+<button class="btn btn-info" (click)="send()"> post posts </button>
+<button class="btn btn-success" (click)="onClick()"> get posts </button>
+
+<ul>
+    <li *ngFor="let item of posts">{{ item.title }}</li>
+</ul>

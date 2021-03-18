@@ -1,0 +1,15 @@
+<h4>Les commandes</h4>
+
+<div class="cmd-tab">
+    <div class="row cmd-tab-title">
+        <div class="col-8">
+            <p>nom</p>
+        </div>
+        <div class="col-4">
+            <p>prix</p>
+        </div>
+    </div>
+    <div class="cmd-tab-items">
+        <app-cmd-item *ngFor="let cmd of cmdList" [cmd]="cmd"></app-cmd-item>
+    </div>
+</div>

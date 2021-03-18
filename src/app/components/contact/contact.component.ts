@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { BonjourService } from 'src/app/services/bonjour.service';
 
 @Component({
   selector: 'app-contact',
@@ -7,9 +8,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ContactComponent implements OnInit {
 
-  constructor() { }
+  constructor(private helloService: BonjourService) { }
 
   ngOnInit(): void {
+  }
+
+  onClick(){
+    this.helloService.sayHello();
   }
 
 }

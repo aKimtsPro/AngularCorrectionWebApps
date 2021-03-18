@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { AccueilComponent } from './components/accueil/accueil.component';
 import { ContactComponent } from './components/contact/contact.component';
+import { HttpComponent } from './components/http/http.component';
 import { MenuComponent } from './components/menu/menu.component';
 import { PateComponent } from './components/menu/pate/pate.component';
 import { PizzaComponent } from './components/menu/pizza/pizza.component';
@@ -14,6 +15,7 @@ const routes: Routes = [
   { path:'menu/pate', component: PateComponent },
   { path:'menu/pizza', component: PizzaComponent },
   { path:'contact', component: ContactComponent },
+  { path:'http', component: HttpComponent },
   { path:'**', component: Page404Component },
 ];
 

@@ -1,5 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { HttpClientModule } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -10,12 +11,15 @@ import { ContactComponent } from './components/contact/contact.component';
 import { MenuComponent } from './components/menu/menu.component';
 import { PateComponent } from './components/menu/pate/pate.component';
 import { PizzaComponent } from './components/menu/pizza/pizza.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ContactFormComponent } from './components/contact/contact-form/contact-form.component';
 import { NavComponent } from './components/nav/nav.component';
 import { Page404Component } from './components/page404/page404.component';
 import { FormatPlatPipe } from './pipes/format-plat.pipe';
 import { MoyennePrixPipe } from './pipes/moyenne-prix.pipe';
+import { CommandeComponent } from './components/menu/commande/commande.component';
+import { CmdItemComponent } from './components/menu/commande/cmd-item/cmd-item.component';
+import { HttpComponent } from './components/http/http.component';
 
 @NgModule({
   declarations: [
@@ -31,12 +35,17 @@ import { MoyennePrixPipe } from './pipes/moyenne-prix.pipe';
     NavComponent,
     Page404Component,
     FormatPlatPipe,
-    MoyennePrixPipe
+    MoyennePrixPipe,
+    CommandeComponent,
+    CmdItemComponent,
+    HttpComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    ReactiveFormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

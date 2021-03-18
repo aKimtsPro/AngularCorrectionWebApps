@@ -1,6 +1,13 @@
 <h4>Menu de pizza</h4>
 
-<ul>
-    <li *ngFor="let pizza of menuPizza"> {{ pizza | formatPlat:fac }} </li>
-</ul>
 <p> Prix moyen des pizzas: {{ menuPizza | moyennePrix  | currency:'USD' }} </p>
+<ul>
+    <li *ngFor="let pizza of menuPizza" class="row"> 
+        <div class="col-7">
+            {{ pizza | formatPlat }} 
+        </div>
+        <div class="col-5">
+            <button class="btn btn-success mb-1" (click)="onClick(pizza)">commander</button>
+        </div>
+    </li>
+</ul>

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { Message } from './message.model';
 
 @Component({
@@ -17,22 +18,27 @@ export class ContactFormComponent implements OnInit {
 
   affich: boolean = true;
 
-  constructor() { }
+  form: FormGroup;
+
+  constructor(builder: FormBuilder) {
+    this.form = builder.group({
+      'nom': new FormControl('', [Validators.required, Validators.minLength(5), Validators.maxLength(50)]),
+      'dest': new FormControl('proprio'),
+      'message': new FormControl('', [Validators.required, Validators.maxLength(100)])
+    })
+  }
 
   ngOnInit(): void {
   }
 
-  onClick(){
-
-    const toAdd: Message = {
-      nom: this.message.nom,
-      dest: this.message.dest,
-      message: this.message.message
-    };
-
-    this.msgList.push( toAdd );
-    this.msgList.forEach((message) => console.log(message.message));
-
+  onSubmit(){
+    console.log(this.form);
+    if ( this.form.valid ){
+      this.msgList.push( this.form.value );
+    }
+    else{
+      alert("le formulaire est invalide");
+    }
   }
 
   toggleShow(){

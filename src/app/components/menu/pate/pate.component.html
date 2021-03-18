@@ -1,7 +1,14 @@
 <h4>Menu de pâte</h4>
 
-<ul>
-    <li *ngFor="let pate of menuPate"> {{ pate | formatPlat }}</li>
-</ul>
 <p> Prix moyen des pate: {{ menuPate | moyennePrix | currency:'USD'}} </p>
+<ul>
+    <li *ngFor="let pate of menuPate" class="row"> 
+        <div class="col-7">
+            {{ pate | formatPlat }} 
+        </div>
+        <div class="col-5">
+            <button class="btn btn-success mb-1" (click)="onClick(pate)">commander</button>
+        </div>
+    </li>
+</ul>
 
